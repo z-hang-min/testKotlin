@@ -14,5 +14,5 @@ import com.tz.testkotlin.bean.LoginBean
 class LoginRepo(private val api: UserApi) : BaseRepository() {
 
     suspend fun login(name: String, pwd: String, data: RespStateData<LoginBean>) =
-        dealResp(block = { api.login(name, pwd) },data)
+        dealResp(block = { api.login(name, pwd) }, liveData = data)
 }

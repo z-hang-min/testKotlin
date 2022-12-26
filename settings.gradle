@@ -2,7 +2,7 @@ pluginManagement {
     repositories {
         gradlePluginPortal()
         google()
-        mavenCentral()
+//        mavenCentral()
     }
 }
 dependencyResolutionManagement {
@@ -15,3 +15,5 @@ dependencyResolutionManagement {
 rootProject.name = "testKotlin"
 include ':app'
 include ':k_common'
+include ':app_voip'
+include ':voip'

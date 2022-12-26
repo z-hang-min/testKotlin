@@ -9,7 +9,7 @@ package com.tz.k_common.utils
 class ConstConfig {
     companion object {
         const  val  ROUTE_PATH_LOGIN:String = "/ui/LoginActivity"
-        const  val  ROUTE_PATH_MAIN:String = "/MainActivity"
+        const  val  ROUTE_PATH_TAB:String = "/ui/TabActivity"
         //kv
         const val USER_NAME: String = "user_name"
         const val USER_COOKIE: String = "user_cookie"

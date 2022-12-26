@@ -2,9 +2,8 @@ package com.tz.testkotlin.api
 
 import com.tz.k_common.network.BaseResp
 import com.tz.testkotlin.bean.LoginBean
-import retrofit2.http.Field
-import retrofit2.http.FormUrlEncoded
-import retrofit2.http.POST
+import com.tz.testkotlin.bean.Articles
+import retrofit2.http.*
 
 /**
  * Created by stew on 8/21/22.
@@ -18,4 +17,12 @@ interface UserApi {
         @Field("username") username: String,
         @Field("password") password: String
     ): BaseResp<LoginBean>
+
+
+    //首页文章列表
+    @GET("article/list/{page}/json")
+    suspend fun getProject(
+        @Path("page") page: Int,
+        @Query("page_size") page_size: Int
+    ): BaseResp<Articles>
 }

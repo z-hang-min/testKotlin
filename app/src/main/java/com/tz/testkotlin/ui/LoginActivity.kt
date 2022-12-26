@@ -1,13 +1,13 @@
 package com.tz.testkotlin.ui
 
 import android.os.Bundle
-import androidx.databinding.ViewDataBinding
-import androidx.lifecycle.ViewModel
 import com.alibaba.android.arouter.facade.annotation.Route
+import com.alibaba.android.arouter.launcher.ARouter
 import com.tz.k_common.base.BaseActivity
 import com.tz.k_common.base.BaseStateObserver
+import com.tz.k_common.utils.ConstConfig
+import com.tz.k_common.utils.KVUtil
 import com.tz.k_common.utils.ToastUtil
-import com.tz.testkotlin.ConstConfig
 import com.tz.testkotlin.R
 import com.tz.testkotlin.bean.LoginBean
 import com.tz.testkotlin.databinding.ActivityLoginBinding
@@ -29,22 +29,31 @@ class LoginActivity : BaseActivity<ActivityLoginBinding>() {
     }
 
     override fun init() {
-        loginViewModel.loginData.observe(this, object : BaseStateObserver<LoginBean>(null){
+        loginViewModel.loginData.observe(this, object : BaseStateObserver<LoginBean>(null) {
             override fun getRespDataSuccess(it: LoginBean) {
                 ToastUtil.showMsg("登陆成功！")
-                finish()
+                ARouter.getInstance().build(ConstConfig.ROUTE_PATH_TAB).navigation()
+                KVUtil.put(ConstConfig.USER_NAME, it.nickname)
             }
-
 
 
         })
 
         mBind.btnGo.setOnClickListener {
-            if (mBind.etAccount.text.toString().isNotEmpty() && mBind.etPwd.text.toString().isNotEmpty()) {
+            if (mBind.etAccount.text.toString().isNotEmpty() && mBind.etPwd.text.toString()
+                    .isNotEmpty()
+            ) {
                 loginViewModel.login(mBind.etAccount.text.toString(), mBind.etPwd.text.toString())
             } else {
                 ToastUtil.showMsg("输入有误！")
             }
         }
+
+
     }
+
+
 }
+
+
+

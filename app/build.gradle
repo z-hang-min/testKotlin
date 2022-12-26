@@ -3,6 +3,10 @@ apply from: '../depen.gradle'
 apply plugin: 'org.jetbrains.kotlin.android'
 android {
 
+
+    buildFeatures {
+        viewBinding true
+    }
     defaultConfig {
         applicationId "com.tz.testkotlin"
     }
