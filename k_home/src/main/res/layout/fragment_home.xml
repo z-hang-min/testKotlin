@@ -10,9 +10,25 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/index_recv"
+        <com.tz.k_common.widget.MySwipeRefreshLayout
+            android:id="@+id/srl_home"
             android:layout_width="match_parent"
-            android:layout_height="match_parent" />
+            android:background="@color/blacke"
+            android:layout_height="match_parent">
+
+            <androidx.core.widget.NestedScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/index_recv"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
+            </androidx.core.widget.NestedScrollView>
+
+
+        </com.tz.k_common.widget.MySwipeRefreshLayout>
+
+
     </FrameLayout>
 </layout>

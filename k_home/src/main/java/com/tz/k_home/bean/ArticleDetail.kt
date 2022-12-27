@@ -1,5 +1,5 @@
 package com.tz.k_home.bean
-
+typealias a = ArticleDetail
 data class ArticleDetail(
         val author: String,
         val fresh: Boolean,

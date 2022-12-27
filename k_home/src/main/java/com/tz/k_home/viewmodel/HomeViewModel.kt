@@ -11,7 +11,11 @@ import com.tz.k_home.repo.HomeRepo
  * @Description:
 
  */
-class HomeViewModel(private val indexRepo: HomeRepo):BaseViewModel() {
+class HomeViewModel(private val repo: HomeRepo):BaseViewModel() {
     var article = RespStateData<Article>()
-    fun getProject(currentPage: Int) = launch { indexRepo.getProject(currentPage, article) }
+    var collectData = RespStateData<String>()
+
+    fun getProject(currentPage: Int) = launch { repo.getProject(currentPage, article) }
+    fun collect(id: Int) = launch { repo.collect(id, collectData) }
+    fun unCollect(id: Int) = launch { repo.unCollect(id, collectData) }
 }

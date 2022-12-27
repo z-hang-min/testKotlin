@@ -1,13 +1,11 @@
 package com.tz.testkotlin.ui.adapter
 
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.tz.testkotlin.R
-import com.tz.testkotlin.bean.Articles
 import com.tz.testkotlin.bean.ProjectDetials
 
 /**

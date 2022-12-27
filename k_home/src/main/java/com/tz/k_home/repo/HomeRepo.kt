@@ -15,4 +15,11 @@ class HomeRepo(var api: HomeApi) : BaseRepository() {
     suspend fun getProject(currentPage: Int, data: RespStateData<Article>) = dealResp(
         { api.getProject(currentPage, 10) }, data
     )
+
+    suspend fun collect(id: Int, data: RespStateData<String>) =
+        dealResp({ api.collect(id) }, data)
+
+    suspend fun unCollect(id: Int, data: RespStateData<String>) = dealResp(
+        { api.unCollect(id) }, data
+    )
 }

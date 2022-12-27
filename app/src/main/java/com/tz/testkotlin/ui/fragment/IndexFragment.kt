@@ -24,17 +24,17 @@ class IndexFragment : BaseFragment<FragmentIndexBinding>() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
+        init()
 
     }
 
-    override fun init() {
+    fun init() {
         adapter = ArticlesAdapter() {
             ToastUtil.showMsg("ssss")
         }
-        var manager =LinearLayoutManager(this.mContext)
-        manager.orientation=RecyclerView.VERTICAL
-        mBind.indexRecv.layoutManager=manager
+        var manager = LinearLayoutManager(this.mContext)
+        manager.orientation = RecyclerView.VERTICAL
+        mBind.indexRecv.layoutManager = manager
         mBind.indexRecv.adapter = adapter
         indexModel.getProject(0)
 

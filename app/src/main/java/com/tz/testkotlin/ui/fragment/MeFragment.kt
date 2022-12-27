@@ -10,7 +10,6 @@ class MeFragment : BaseFragment<FragmentMeBinding>() {
         return R.layout.fragment_me
     }
 
-    override fun init() {
-    }
+
 
 }
