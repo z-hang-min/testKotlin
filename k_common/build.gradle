@@ -1,8 +1,12 @@
 apply plugin: 'com.android.library'
 apply from: '../depen.gradle'
-android{
-
-}
+//android {
+//    sourceSets {
+//        main {
+//            manifest.srcFile 'src/main/manifest/AndroidManifest.xml'
+//        }
+//    }
+//}
 
 dependencies {
     //oKHttp
@@ -11,4 +15,5 @@ dependencies {
     //retrofit
     api("com.squareup.retrofit2:retrofit:2.9.0")
     implementation("com.squareup.retrofit2:converter-gson:2.9.0")
+
 }

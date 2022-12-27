@@ -4,6 +4,7 @@ import android.app.Application
 import com.alibaba.android.arouter.launcher.ARouter
 import com.tencent.mmkv.MMKV
 import com.tz.k_common.utils.ToastUtil
+import com.tz.k_home.di.homeModule
 import com.tz.testkotlin.di.userModule
 import org.koin.android.ext.koin.androidContext
 import org.koin.android.ext.koin.androidLogger
@@ -16,7 +17,7 @@ import org.koin.core.context.startKoin
 
  */
 class App : Application() {
-    private val modules = mutableListOf(userModule)
+    private val modules = mutableListOf(userModule,homeModule)
     override fun onCreate() {
         super.onCreate()
         initARouter()

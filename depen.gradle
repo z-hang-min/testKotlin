@@ -56,4 +56,7 @@ dependencies {
 
     //mmkv key-value存储
     implementation 'com.tencent:mmkv:1.2.10'
+
+    // Koin for Android
+    implementation "io.insert-koin:koin-android:$koin_version"
 }

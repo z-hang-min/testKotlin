@@ -3,8 +3,13 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/indexFragment">
+    app:startDestination="@id/homeFragment">
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.tz.k_home.ui.HomeFragment"
+        tools:layout="@layout/fragment_home">
 
+    </fragment>
     <fragment
         android:id="@+id/indexFragment"
         android:name="com.tz.testkotlin.ui.fragment.IndexFragment"
