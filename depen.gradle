@@ -56,7 +56,12 @@ dependencies {
 
     //mmkv key-value存储
     implementation 'com.tencent:mmkv:1.2.10'
+    //轮播banner
+    implementation 'com.github.zhpanvip:bannerviewpager:3.5.8'
 
     // Koin for Android
     implementation "io.insert-koin:koin-android:$koin_version"
+    //图片库
+    implementation 'io.coil-kt:coil:1.2.1'
+
 }

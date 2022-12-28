@@ -12,7 +12,9 @@ import com.tz.k_common.utils.ToastUtil
 import com.tz.k_home.R
 import com.tz.k_home.bean.Article
 import com.tz.k_home.bean.ArticleDetail
+import com.tz.k_home.bean.Banner
 import com.tz.k_home.databinding.FragmentHomeBinding
+import com.tz.k_home.ui.adapter.BannerAdapter
 import com.tz.k_home.ui.adapter.HomeItemClickListener
 import com.tz.k_home.ui.adapter.HomeRVAdapter
 import com.tz.k_home.viewmodel.HomeViewModel
@@ -33,6 +35,14 @@ class HomeFragment : BaseVMFragment<FragmentHomeBinding>() {
     }
 
     override fun init() {
+
+        mBind.banner.apply {
+            setAdapter(BannerAdapter())
+            setLifecycleRegistry(lifecycle)
+            setScrollDuration(600)
+            setInterval(5000)
+            setAutoPlay(false)
+        }.create()
         lm = LinearLayoutManager(this.mContext)
         lm.orientation = RecyclerView.VERTICAL
         mBind.indexRecv.layoutManager = lm
@@ -71,13 +81,33 @@ class HomeFragment : BaseVMFragment<FragmentHomeBinding>() {
         mBind.srlHome.setColorSchemeResources(R.color.purple_700)
         mBind.srlHome.setOnRefreshListener {
             homeRVAdapter.isLastPage = false
-            homeViewModel.getProject(0)
+            getData()
 
         }
+
+        getData()
+    }
+
+    private fun getData() {
+        homeViewModel.getBanner()
         homeViewModel.getProject(0)
     }
 
     override fun observe() {
+        homeViewModel.bannerList.observe(this,object :BaseStateObserver<List<Banner>>(null){
+            override fun getRespDataSuccess(it: List<Banner>) {
+                Log.d(TAG, "observe bannerList: " + it.size)
+                if (it.isEmpty()) {
+                    return
+                }
+                mBind.banner.refreshData(it)
+            }
+
+            override fun getRespDataEnd() {
+                resetUI()
+            }
+        })
+
         homeViewModel.article.observe(this, object : BaseStateObserver<Article>(null) {
             override fun getRespDataSuccess(it: Article) {
                 resetUI()
@@ -101,6 +131,9 @@ class HomeFragment : BaseVMFragment<FragmentHomeBinding>() {
                 } else {
                     homeRVAdapter.setData(list)
                 }
+            }
+            override fun getRespDataEnd() {
+                resetUI()
             }
 
         })

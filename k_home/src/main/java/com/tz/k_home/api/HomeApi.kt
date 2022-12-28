@@ -2,6 +2,7 @@ package com.tz.k_home.api
 
 import com.tz.k_common.network.BaseResp
 import com.tz.k_home.bean.Article
+import com.tz.k_home.bean.Banner
 import retrofit2.http.*
 
 /**
@@ -9,6 +10,9 @@ import retrofit2.http.*
  * mail: stewforani@gmail.com
  */
 interface HomeApi {
+    //首页banner
+    @GET("banner/json")
+    suspend fun getBanner(): BaseResp<List<Banner>>
 
 
     //首页文章列表

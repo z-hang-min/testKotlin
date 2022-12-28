@@ -4,6 +4,7 @@ import com.tz.k_common.base.BaseRepository
 import com.tz.k_common.network.RespStateData
 import com.tz.k_home.api.HomeApi
 import com.tz.k_home.bean.Article
+import com.tz.k_home.bean.Banner
 
 /**
  * created by zm on 2022/11/10
@@ -12,6 +13,10 @@ import com.tz.k_home.bean.Article
 
  */
 class HomeRepo(var api: HomeApi) : BaseRepository() {
+
+    suspend fun getBanner(data: RespStateData<List<Banner>>) = dealResp(
+        { api.getBanner() }, data
+    )
     suspend fun getProject(currentPage: Int, data: RespStateData<Article>) = dealResp(
         { api.getProject(currentPage, 10) }, data
     )
