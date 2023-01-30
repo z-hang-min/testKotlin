@@ -12,16 +12,16 @@
     </fragment>
     <fragment
         android:id="@+id/indexFragment"
-        android:name="com.tz.testkotlin.ui.fragment.IndexFragment"
-        tools:layout="@layout/fragment_index">
+        android:name="com.tz.k_project.ui.ProjectFragment"
+        tools:layout="@layout/fragment_project">
         <action
             android:id="@+id/action_homeFragment_to_categoryFragment"
             app:destination="@id/meFragment" />
     </fragment>
     <fragment
         android:id="@+id/meFragment"
-        android:name="com.tz.testkotlin.ui.fragment.MeFragment"
-        tools:layout="@layout/fragment_me">
+        android:name="com.tz.k_user.ui.UserFragment"
+        tools:layout="@layout/fragment_user">
 
     </fragment>
 </navigation>

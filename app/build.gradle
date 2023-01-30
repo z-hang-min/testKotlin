@@ -14,5 +14,7 @@ android {
 dependencies {
     implementation project(path: ':k_common')
     implementation project(path: ':k_home')
+    implementation project(path: ':k_user')
+    implementation project(path: ':k_project')
     //包含了核心库 org.koin.core
 }

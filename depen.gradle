@@ -63,5 +63,6 @@ dependencies {
     implementation "io.insert-koin:koin-android:$koin_version"
     //图片库
     implementation 'io.coil-kt:coil:1.2.1'
-
+//roundedimageview
+    implementation 'com.makeramen:roundedimageview:2.3.0'
 }
