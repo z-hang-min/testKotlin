@@ -16,7 +16,8 @@ dependencyResolutionManagement {
 
     }
 }
-rootProject.name = "testKotlin"
+rootProject.name = "testKotlinss "
+
 include ':app'
 include ':k_common'
 include ':app_voip'
@@ -29,3 +30,6 @@ include ':facetest2'
 include ':jvmtest'
 include ':personaidlserver'
 include ':personaidlclient'
+include ':sockertest'
+include ':okhttp-test'
+include ':javalibrary'

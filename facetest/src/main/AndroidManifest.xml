@@ -9,7 +9,12 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.TestKotlin">
-
+        <activity
+            android:name=".FansheActivity"
+            android:exported="false" />
+        <activity
+            android:name=".AnnotationTestActivity"
+            android:exported="false" />
         <activity
             android:name=".lanuchmodetest.ThirdActivity"
             android:exported="false" />
@@ -30,12 +35,11 @@
             android:exported="false" />
         <activity
             android:name=".lifetest.NormalActivity"
-            android:exported="false" />
-<!--        <activity-->
-<!--            android:name=".testhandler.HandlerTestActivity"-->
-<!--            android:exported="true" />-->
+            android:exported="false" /> <!-- <activity -->
+        <!-- android:name=".testhandler.HandlerTestActivity" -->
+        <!-- android:exported="true" /> -->
         <activity
-            android:name=".testhandler.HandlerTestActivity"
+            android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

@@ -1,11 +1,17 @@
 package com.tz.facetest
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 
 open class BaseActivity : AppCompatActivity() {
+
     private val tag=javaClass.simpleName
+    override fun onNewIntent(intent: Intent?) {
+        super.onNewIntent(intent)
+        Log.d(tag,"onNewIntent()")
+    }
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         Log.d(tag,"onCreate()")
